@@ -1,0 +1,8 @@
+.two-column {
+    display: flex;
+    justify-content: space-between;
+}
+.two-column>section {
+    width: 50%;
+    padding: 4px;
+}
