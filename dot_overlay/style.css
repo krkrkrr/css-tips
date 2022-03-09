@@ -1,0 +1,60 @@
+body {
+  height: 100vh;
+  width: 100vw;
+}
+
+.border-background {
+  background: repeating-linear-gradient(
+    45deg,
+    yellow,
+    yellow 100px,
+    magenta 100px,
+    magenta 200px,
+    cyan 200px,
+    cyan 300px,
+    black 300px,
+    black 400px
+  );
+}
+
+/*
+参考: 
+https://stackoverflow.com/questions/53425836/css-square-background-image
+ */
+.wrap-layer {
+  height: 100%;
+  width: 100%;
+
+  --nr: 180; /* number of rows */
+  --nc: 320; /* number of columns */
+  --b: 2px; /* border length */
+
+  --g: rgba(255, 255, 255, 0.781) calc(100% - var(--b)),
+    rgba(255, 255, 255, 0.329) 0;
+  -webkit-mask: linear-gradient(to right, var(--g)),
+    linear-gradient(to bottom, var(--g));
+  mask: linear-gradient(to right, var(--g)),
+    linear-gradient(to bottom, var(--g));
+  -webkit-mask-size: calc(
+        (100% - var(--b) * (var(--nc) - 1)) / var(--nc) + var(--b)
+      )
+      100%,
+    100% calc((100% - var(--b) * (var(--nr) - 1)) / var(--nr) + var(--b));
+  mask-size: calc((100% - var(--b) * (var(--nc) - 1)) / var(--nc) + var(--b))
+      100%,
+    100% calc((100% - var(--b) * (var(--nr) - 1)) / var(--nr) + var(--b));
+  -webkit-mask-composite: source-in;
+  mask-composite: intersect;
+  background: rgb(255, 255, 255);
+}
+
+.text-layer {
+  width: 400px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  background-color: gray;
+  color: azure;
+}

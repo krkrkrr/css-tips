@@ -1,8 +1,25 @@
-.two-column {
-    display: flex;
-    justify-content: space-between;
-}
-.two-column>section {
-    width: 50%;
-    padding: 4px;
-}
+#header {
+    text-align: center;
+  }
+  .title {
+      font-size: 2em;
+  }
+  .author {
+      font-size: 1.2em;
+  }
+  .two-column {
+      display: flex;
+      justify-content: space-between;
+  }
+  .two-column>section {
+      width: 50%;
+      padding: 4px;
+  }
+  .level1>h1 {
+      text-align: center;
+      font-size: 1.5em;
+  }
+  .level2>h2 {
+      font-size: 1em;
+      font-weight: bold;
+  }
